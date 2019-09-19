@@ -9,6 +9,7 @@ import GetaMate from './GetaMate';
 import DrChaos from './DrChaos';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import EintragBearbeiten from './EintragBearbeiten';
 
 
 const Startseite = () =>
@@ -60,6 +61,7 @@ function App() {
             <Route path="/DrChaos" component={DrChaos} />
             <Route path="/impressum" component={Impressum} />
             <Route path="/Kontakt" component={Kontakt} />
+            <Route path="/update/:id" component={EintragBearbeiten} />
           </Switch>
         </div>
         <Footer />

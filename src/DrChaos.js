@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import styles from './eintragtabelle.module.css';
 import style from './addeintrag.module.css';
-
+import { Link } from 'react-router-dom';
+import {
+  withRouter
+} from 'react-router-dom'
 
 
 
@@ -38,7 +41,14 @@ class DrChaos extends Component {
   };
 
   delete = (id) => {
-    console.log(id)
+    const { adding } = this.state;
+    fetch(`http://localhost:3001/DrChaos/delete?id=${id}`)
+      .catch(err => console.error(err))
+    this.getEintraegeDrChaos();
+  }
+
+  edit = (id) => {
+    this.props.history.push(`/update/${id}`)
   }
 
 
@@ -47,8 +57,6 @@ class DrChaos extends Component {
     const { adding } = this.state;
     const { deleteit } = this.state;
 
-
-    console.log(this.state);
     return (
 
 
@@ -72,8 +80,8 @@ class DrChaos extends Component {
                 <tr key={eintrag.Eintrag}>
                   <td className={styles.tdeintragtabelle} ref={eintrag.Titel}>{eintrag.Titel}</td>
                   <td className={styles.tdeintragtabelle}>{eintrag.Eintrag}</td>
-                  <td className={styles.tdeintragtabelle}><button>bearbeiten</button></td>
-                  <td className={styles.tdeintragtabelle}><button onClick={() => { console.log(eintrag); this.delete(eintrag.ID) }}>löschen</button></td>
+                  <td className={styles.tdeintragtabelle}><button onClick={() => { this.edit(eintrag.ID) }}>bearbeiten</button></td>
+                  <td className={styles.tdeintragtabelle}><button onClick={() => { this.delete(eintrag.ID) }}>löschen</button></td>
                 </tr>
               ))}
             </tbody>
@@ -97,4 +105,4 @@ class DrChaos extends Component {
     );
   }
 }
-export default DrChaos;
+export default withRouter(DrChaos);
