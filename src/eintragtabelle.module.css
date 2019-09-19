@@ -1,0 +1,27 @@
+.eintragtabelle{
+    height:80vh;
+    width: 80vh;
+    max-height: 30%;
+    max-inline-size: 60%;
+       border-collapse: separate;
+       border: 1;
+       border-style: solid;
+  }
+  
+  tbody{
+    overflow: auto;
+  }
+  
+  .theintragtabelle{
+    background-color: rgb(125, 131, 139);
+    border: 1;
+    border-style: solid;
+  }
+  
+  
+  .tdeintragtabelle {
+      text-align: left;
+      padding: 0.5em 1em;
+      border: 1;
+      border-style: solid;
+     }

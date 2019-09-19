@@ -1,0 +1,26 @@
+.inputtitel{
+    width: 90%;
+     min-width: 90%; 
+    box-sizing: border-box;
+    padding: 4px;
+    outline: none;
+    justify-content: space-around;
+}
+
+.inputlabel{
+    justify-content: space-around;
+    padding: 4ex;
+}
+
+.inputeintrag{
+     width: 90%;
+     min-width: 90%; 
+     height: 100px;
+     box-sizing: border-box;
+    outline: none;
+    justify-content: space-around;
+}
+
+.kontaktstart{
+    border : solid black;
+}
